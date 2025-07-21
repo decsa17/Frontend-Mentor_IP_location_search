@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+$Gray-950: hsl(0, 0%, 17%);
+$Gray-400: hsl(0, 0%, 58%);
+
+$Font-Family: "Rubik", sans-serif;
+
+$Text-input: 16px;
+
+$Font-Light: 400;
+$Font-Regular: 500;
+$Font-Bold: 700;
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: $Text-input;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    width: 100%;;
+}
+
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: url("../../images/pattern-bg-mobile.png") no-repeat center;
+    background-size: cover;
+}
+
+
+.wrapper {
+    margin: 0;
+    padding: 0;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+
+    
+    h1 {
+        font-family: $Font-Family;
+        color: white;
+        font-size: 1.5em;
+        font-weight: $Font-Regular;
+        text-align: center;
+    }
+
+    .search-bar-box {
+
+        input {
+            width: 250px;
+            padding: 17px 16px;
+            border-radius: 1em;
+            border: none;
+            font-family: $Font-Family;
+            font-size: $Text-input;
+            font-weight: $Font-Regular;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        button {
+            padding: 18px 16px;
+            width: 75px;
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;;
+            border: none;
+            background-color: black;
+            margin-left: -1.25em;
+        }
+    } 
+}
+
+
+// results section
+.IP-info {
+    background-color: white;
+    width: 344.3px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em; 
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+
+    .vertical-line {
+        display: none;
+    }
+
+    div {
+        margin: 2em auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 250px;
+    }
+
+    div > * {
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+h3 {
+    color: $Gray-400;
+    font-size: 0.6em;;
+    font-weight: $Font-Bold;
+    font-family: $Font-Family;
+    text-align: center;
+    letter-spacing: 0.10em;
+    margin: 0;
+    padding: 0;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+h2 > span {
+    color: black;
+    font-family: $Font-Family;
+    text-align: center;
+    font-weight: $Font-Bold;
+    font-size: clamp(0.75em, 1.25vw, 0.75em);
+}
+
+#map {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: black;
+    margin-bottom: 40px;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    cursor: grab;
+    background: #ddd;
+    outline-offset: 1px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    touch-action: none;
+    height: 100vh;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+
+    .content-box {
+        background: url("../../images/pattern-bg-desktop.png") no-repeat center;
+        background-size: cover;
+        height: 17rem;
+    }
+
+    .wrapper {
+
+        .search-bar-box {
+            input {
+                width: 450px;
+                padding: 17px 16px;
+            }
+        }
+    }
+
+    .IP-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: auto;
+        min-width: 90%;
+        height: 7.5rem;
+
+        .vertical-line { // show vertical lines on 768px above
+            display: block;
+            width: 1px;
+            height: 4em;
+            background-color: $Gray-400;
+        }
+    }
+}
